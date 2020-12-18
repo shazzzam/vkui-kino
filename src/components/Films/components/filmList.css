@@ -1,0 +1,36 @@
+.films__list {
+  margin-top: 20px;
+}
+
+.films__card {
+  overflow: hidden;
+}
+
+.films__card-inner {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+
+.films__card-content {
+  padding: 5px;
+  flex-grow: 1;
+}
+
+.films__card-title {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.films__card-tag {
+  margin-right: 5px;
+}
+
+.films__card-tag::after {
+  content: ', ';
+  display: inline-block;
+}
+
+.films__card-tag:last-child::after {
+  display: none;
+}

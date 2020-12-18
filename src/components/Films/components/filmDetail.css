@@ -1,0 +1,34 @@
+.film {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.film__left {
+  width: 60%;
+}
+
+.film__right {
+  width: 30%;
+}
+
+.film__bottom {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.film__tag {
+  margin-right: 5px;
+}
+
+.film__tag::after {
+  content: ', ';
+  display: inline-block;
+}
+
+.film__tag:last-child::after {
+  display: none;
+}
+
+.film__facts-title {
+  margin-top: 20px;
+}

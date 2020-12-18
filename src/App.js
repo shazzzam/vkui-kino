@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { ModalRoot, Root } from '@vkontakte/vkui';
+import '@vkontakte/vkui/dist/vkui.css';
+import { useSelector } from 'react-redux';
+
+import { Menu } from './components/Menu/Menu';
+import { About } from './components/About/About';
+import { Films } from './components/Films/Films';
 
 function App() {
+  const activeView = useSelector((state) => state.app.activeView);
+  const menuState = useSelector((state) => state.app.menuState);
+
+  const modal = (
+    <ModalRoot activeModal={menuState ? 'menu' : null}>
+      <Menu id="menu" />
+    </ModalRoot>
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Root activeView={activeView} modal={modal}>
+      <Films id="films" />
+      <About id="about" />
+    </Root>
   );
 }
 
